@@ -1,5 +1,7 @@
 package com.matteo88.employeedirectoryapi.model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -11,10 +13,16 @@ public class Employee {
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @NotNull
     @Column(name = "first_name")
     private String firstName;
+
+    @NotNull
     @Column(name = "last_name")
     private String lastName;
+
+    @NotNull
     @Column(name = "email")
     private String email;
 

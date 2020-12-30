@@ -1,6 +1,7 @@
 package com.matteo88.employeedirectoryapi.service;
 
 import com.matteo88.employeedirectoryapi.dao.EmployeeRepository;
+import com.matteo88.employeedirectoryapi.exceptions.EmployeeNotFoundException;
 import com.matteo88.employeedirectoryapi.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,8 +27,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee findById(int id) {
         Optional<Employee> maybeEmployee = employeeRepository.findById(id);
-        Employee employee = maybeEmployee.orElseThrow();
-        return employee;
+        return maybeEmployee.orElseThrow(()
+                -> new EmployeeNotFoundException("The employee with id " + id + " does not exist"));
     }
 
     @Override
