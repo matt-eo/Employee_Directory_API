@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class EmployeeDirectoryApiApplication {
 
 	public static void main(String[] args) {
+		//Starts the application
 		SpringApplication.run(EmployeeDirectoryApiApplication.class, args);
 	}
 
