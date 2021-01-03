@@ -10,6 +10,7 @@ public class EmployeeDirectoryApiApplication {
 
 	public static void main(String[] args) {
 		//Starts the application
+		System.out.println("Starting");
 		SpringApplication.run(EmployeeDirectoryApiApplication.class, args);
 	}
 
